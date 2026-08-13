@@ -1,0 +1,14 @@
+{
+  "name": "iluvatar",
+  "owner": { "name": "Rudenko Volodymyr" },
+  "description": "iluvatar as an installable Claude Code plugin.",
+  "plugins": [
+    {
+      "name": "iluvatar",
+      "source": "./",
+      "description": "Classify a raw app idea into CS terms before any technology is named.",
+      "category": "engineering",
+      "keywords": ["architecture", "classification", "system-design"]
+    }
+  ]
+}

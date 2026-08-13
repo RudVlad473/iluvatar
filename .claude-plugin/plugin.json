@@ -1,0 +1,10 @@
+{
+  "name": "iluvatar",
+  "version": "1.0.0",
+  "description": "Classify a raw app idea into CS terms and emit a frozen, machine-parseable HIGH-LEVEL-ARCHITECTURE.md — before any technology is named.",
+  "author": { "name": "Rudenko Volodymyr" },
+  "repository": "https://github.com/RudVlad473/iluvatar",
+  "license": "MIT",
+  "keywords": ["architecture", "classification", "specification", "system-design"],
+  "skills": ["./skills/iluvatar"]
+}
