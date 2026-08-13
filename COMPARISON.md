@@ -93,7 +93,7 @@ something in that shape.
 Fetched and cited August 12, 2026:
 
 - https://docs.bmad-method.org/reference/workflow-map/
-- https://github.com/bmad-code-org/BMAD-METHOD (core-architecture.md)
+- https://github.com/bmad-code-org/BMAD-METHOD
 - https://github.com/github/spec-kit
 - https://github.com/github/spec-kit/blob/main/spec-driven.md
 - https://den.dev/blog/github-spec-kit/

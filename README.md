@@ -29,12 +29,30 @@ to "which framework."
 /plugin install iluvatar@iluvatar
 ```
 
-**Or copy it directly** — works anywhere, no plugin system required:
+**Or copy it directly** — works anywhere, no plugin system required.
+Requires Python 3.9+ on PATH (stdlib only, nothing to `pip install`).
 
 ```
 git clone https://github.com/RudVlad473/iluvatar
-cp -r iluvatar/skills/iluvatar /path/to/your/project/skills/
+cp -r iluvatar/skills/iluvatar ~/.claude/skills/          # available in every project
 ```
+
+Or scoped to one project only:
+
+```
+git clone https://github.com/RudVlad473/iluvatar
+mkdir -p /path/to/your/project/.claude/skills
+cp -r iluvatar/skills/iluvatar /path/to/your/project/.claude/skills/
+```
+
+On Windows (PowerShell):
+
+```
+git clone https://github.com/RudVlad473/iluvatar
+Copy-Item -Recurse iluvatar\skills\iluvatar $HOME\.claude\skills\
+```
+
+Then just describe your app idea, or say "run iluvatar."
 
 ## What it produces
 
