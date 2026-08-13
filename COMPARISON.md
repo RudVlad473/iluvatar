@@ -68,6 +68,71 @@ one-line idea instead of requiring a human to author the model, that
 would narrow or close this gap. Worth re-checking if either project ships
 something in that shape.
 
+## Grounded in named standards, not invented
+
+The 15 cross-cutting invariants iluvatar sweeps against (State,
+Boundaries, Movement, Identity, Trust, Secrets, Concurrency, Failure,
+Observability, Verification, Change-over-time, Budget, Delivery,
+Interaction, Compliance & Data Governance) started as a domain-agnostic
+synthesis — "what must any software system answer regardless of shape"
+— not a transcription of any one standard. `SKILL.md` says so directly:
+"this list is a synthesis, not a sourced taxonomy."
+
+What makes it more than vibes is what happened next: a deliberate, cited
+gap analysis against five named external frameworks, closing three real
+gaps and confirming the rest were already covered — checked, not
+asserted.
+
+**Real gaps found and closed:**
+- **Interaction** (invariant #14) — ISO/IEC 25010:2023 replaced
+  "usability" with "interaction capability" and added inclusivity as an
+  explicit sub-characteristic, verbatim from the 2023 revision. Nothing
+  in the original 13 invariants asked whether a human interacts with the
+  system directly, or what accessibility/localization obligations that
+  creates.
+- **Compliance & Data Governance** (invariant #15) — arc42's
+  "Constraints" section and ISO 25010's Security sub-characteristics ask
+  about legal/regulatory constraints (GDPR/HIPAA/PCI, data residency,
+  retention, audit) that Trust and Secrets alone don't cover.
+- **A sustainability sub-question under Budget** — the AWS
+  Well-Architected Framework's sixth pillar (added December 2021) treats
+  energy/carbon/resource efficiency as a design driver alongside cost;
+  Budget originally only asked about money and volumes.
+
+**Confirmed already covered, not manufactured into findings:** DDD
+strategic design's bounded contexts map onto the Boundaries invariant and
+its `[boundary-spanning]` tag; the Google SRE production-readiness
+taxonomy (monitoring, capacity, rollback, on-call) maps onto
+Observability, Budget, Delivery, and Failure; the rest of ISO 25010's
+characteristics (Maintainability, Flexibility, Reliability, Performance
+Efficiency) map onto Change-over-time, Failure, Verification, and
+Budget.
+
+This audit isn't a one-time claim — it's how the invariant list is meant
+to grow. `SKILL.md`'s own rule: a new invariant only gets added when a
+generative catch-all pass repeatedly surfaces the same missing question,
+or a *deliberate, cited* gap analysis against a named framework
+identifies a specific gap and its architectural consequence. Invariants
+#14 and #15 were added this second way.
+
+The three vendored methods iluvatar's Phase 1 runs on are a separate,
+narrower kind of grounding, not written for this project: Phase 1's
+requirements scoping and capacity estimation (`botec.py`) come from
+[`proyecto26/system-design-skills`](https://github.com/proyecto26/system-design-skills)
+(MIT, pinned at a specific audited commit — see
+`skills/iluvatar/references/vendor/VENDOR.md`).
+
+**Sources for this audit** (fetched and cited August 12, 2026):
+
+- https://www.iso.org/obp/ui/en/#!iso:std:78176:en
+- https://quality.arc42.org/standards/iso-25010
+- https://arc42.org/overview/
+- https://docs.arc42.org/home/
+- https://aws.amazon.com/blogs/apn/the-6-pillars-of-the-aws-well-architected-framework/
+- https://aws.amazon.com/about-aws/whats-new/2021/12/new-sustainability-pillar-aws-well-architected-framework/
+- https://martinfowler.com/bliki/BoundedContext.html
+- https://sre.google/sre-book/evolving-sre-engagement-model/
+
 ## Caveats
 
 - **BMAD is mid-rewrite** (`bmad-create-architecture` moving toward

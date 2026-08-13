@@ -56,6 +56,20 @@ Copy-Item -Recurse iluvatar\skills\iluvatar $HOME\.claude\skills\
 
 Then just describe your app idea, or say "run iluvatar."
 
+## Pairs well with
+
+iluvatar classifies whatever idea you hand it — it doesn't sharpen a
+vague one first. Best served after Matt Pocock's
+[`grill-with-docs`](https://github.com/mattpocock/skills): a relentless
+interview that pressure-tests the idea and produces docs (ADRs, a
+glossary) as it goes, so iluvatar has something more complete to
+classify by the time it runs.
+
+```
+/plugin marketplace add mattpocock/skills
+/plugin install mattpocock-skills@mattpocock
+```
+
 ## What it produces
 
 Give it: *"Paste a URL, get a clean readable version saved for later,
@@ -90,6 +104,13 @@ No live tool was found (verified 2026-08-12) that takes a free-text idea
 and emits a stable, schema-validated, downstream-parseable classification
 this way. Re-verify before leaning on this claim long after that date.
 Full reasoning, sources, and caveats: [`COMPARISON.md`](COMPARISON.md).
+
+The 15-invariant checklist itself isn't invented from vibes, either — it
+started as a domain-agnostic synthesis, then got audited clause-by-clause
+against five named frameworks (ISO/IEC 25010:2023, arc42, the AWS
+Well-Architected Framework, DDD strategic design, the Google SRE
+production-readiness taxonomy), closing three real gaps the audit found.
+Details and citations: [`COMPARISON.md`](COMPARISON.md#grounded-in-named-standards-not-invented).
 
 ## What it won't do
 
