@@ -34,6 +34,7 @@ Requires Python 3.9+ on PATH (stdlib only, nothing to `pip install`).
 
 ```
 git clone https://github.com/RudVlad473/iluvatar
+mkdir -p ~/.claude/skills
 cp -r iluvatar/skills/iluvatar ~/.claude/skills/          # available in every project
 ```
 
@@ -49,6 +50,7 @@ On Windows (PowerShell):
 
 ```
 git clone https://github.com/RudVlad473/iluvatar
+New-Item -ItemType Directory -Force -Path "$HOME\.claude\skills"
 Copy-Item -Recurse iluvatar\skills\iluvatar $HOME\.claude\skills\
 ```
 
