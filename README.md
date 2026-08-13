@@ -1,4 +1,4 @@
-# iluvatar ⭐
+# iluvatar 🌟
 
 *Conceives the world before anything is built.*
 
