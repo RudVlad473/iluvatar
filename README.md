@@ -26,7 +26,7 @@ to "which framework."
 
 ```
 /plugin marketplace add RudVlad473/iluvatar
-/plugin install iluvatar@iluvatar
+/plugin install iluvatar@RudVlad473
 ```
 
 **Or copy it directly** — works anywhere, no plugin system required.
