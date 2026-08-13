@@ -1,4 +1,4 @@
-# iluvatar
+# iluvatar ⭐
 
 *Conceives the world before anything is built.*
 
@@ -20,7 +20,7 @@ complete, before the Ainur ever sing it into being. That's the whole
 pitch: architecture before creation, not architecture as an afterthought
 to "which framework."
 
-## Install
+## 📦 Install
 
 **As a Claude Code plugin:**
 
@@ -56,7 +56,7 @@ Copy-Item -Recurse iluvatar\skills\iluvatar $HOME\.claude\skills\
 
 Then just describe your app idea, or say "run iluvatar."
 
-## Pairs well with
+## 🤝 Pairs well with
 
 iluvatar classifies whatever idea you hand it — it doesn't sharpen a
 vague one first. Best served after Matt Pocock's
@@ -82,8 +82,21 @@ iluvatar returns `HIGH-LEVEL-ARCHITECTURE.md`, classifying it as
 flow spine across write, read, and scheduled paths, and running real
 numbers instead of adjectives:
 
-> `budget_notes: "~7 saves/day, ~639MB total storage over a 5-year
-> retention window (botec.py), single self-hosted server..."`
+```yaml
+archetypes: [etl-pipeline, crud-service, background-jobs]
+primary_artifact: a saved article (URL in, extracted text stored)
+budget_notes: "~7 saves/day, ~639MB total storage over a 5-year
+  retention window (botec.py), single self-hosted server..."
+```
+
+...and a flow spine that starts:
+
+```
+1. submit-url — user-entered URL → validated, canonicalized URL
+2. fetch — canonicalized URL → raw HTML (or a recorded fetch failure)
+3. extract — raw HTML → title + readable text + metadata
+   ...
+```
 
 Every number is tagged with where it came from — a script run, something
 the user stated, or an explicit assumption — so nothing in the document
@@ -111,6 +124,13 @@ against five named frameworks (ISO/IEC 25010:2023, arc42, the AWS
 Well-Architected Framework, DDD strategic design, the Google SRE
 production-readiness taxonomy), closing three real gaps the audit found.
 Details and citations: [`COMPARISON.md`](COMPARISON.md#grounded-in-named-standards-not-invented).
+
+Phase 1's requirements scoping and capacity estimation (the `botec.py`
+calculator behind the numbers above) aren't original either — they're
+vendored from
+[`proyecto26/system-design-skills`](https://github.com/proyecto26/system-design-skills)
+(MIT, pinned at a specific audited commit — see
+[`skills/iluvatar/references/vendor/VENDOR.md`](skills/iluvatar/references/vendor/VENDOR.md)).
 
 ## What it won't do
 
