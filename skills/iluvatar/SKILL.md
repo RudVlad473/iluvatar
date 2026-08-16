@@ -145,7 +145,8 @@ is a decision some later tool will make alone.
 4. **Identity** — how is a thing named, keyed, addressed, and recognised
    as the same thing twice?
 5. **Trust** — who is allowed to do what, and how is that established?
-6. **Secrets** — what must not be readable, and where does it live?
+6. **Secrets** — what must not be readable, where does it live, and how
+   is it kept from leaking before it ships?
 7. **Concurrency** — what happens when two things happen at once, or out
    of order, or twice?
 8. **Failure** — what breaks, how does it degrade, how does it recover?
@@ -168,6 +169,12 @@ is a decision some later tool will make alone.
 15. **Compliance & Data Governance** — what legal/regulatory regimes,
     data-residency, retention, and audit obligations apply, and where
     do they force the architecture?
+16. **Attack Surface** — what can reach this system from outside its
+    trust boundary (malformed input, abuse/flood, a compromised
+    dependency), and what stops each? Distinct from Trust (who is
+    allowed to do what) and Secrets (what must stay unreadable): this is
+    what happens when something malicious is thrown at the boundary
+    regardless of who it claims to be.
 
 **Boundary-spanning tag.** Any invariant above — not just Boundaries — can
 resolve to a concern whose contract is agreed between separately-built
@@ -191,8 +198,8 @@ the same missing question, or when a deliberate, cited gap analysis
 against a named external framework (ISO/IEC 25010, arc42, the AWS
 Well-Architected Framework, DDD strategic design, the Google SRE
 production-readiness taxonomy) identifies a specific gap and the
-architectural consequence it produces — invariants #14 and #15 were
-added this second way, with zero 5C evidence behind them.
+architectural consequence it produces — invariants #14, #15, and #16
+were added this second way, with zero 5C evidence behind them.
 
 ### 5B. Archetype cross-check (completeness only)
 

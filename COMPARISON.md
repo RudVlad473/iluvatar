@@ -70,13 +70,14 @@ something in that shape.
 
 ## Grounded in named standards, not invented
 
-The 15 cross-cutting invariants iluvatar sweeps against (State,
+The 16 cross-cutting invariants iluvatar sweeps against (State,
 Boundaries, Movement, Identity, Trust, Secrets, Concurrency, Failure,
 Observability, Verification, Change-over-time, Budget, Delivery,
-Interaction, Compliance & Data Governance) started as a domain-agnostic
-synthesis — "what must any software system answer regardless of shape"
-— not a transcription of any one standard. `SKILL.md` says so directly:
-"this list is a synthesis, not a sourced taxonomy."
+Interaction, Compliance & Data Governance, Attack Surface) started as a
+domain-agnostic synthesis — "what must any software system answer
+regardless of shape" — not a transcription of any one standard.
+`SKILL.md` says so directly: "this list is a synthesis, not a sourced
+taxonomy."
 
 What makes it more than vibes is what happened next: a deliberate, cited
 gap analysis against five named external frameworks, closing three real
@@ -98,6 +99,19 @@ asserted.
   Well-Architected Framework's sixth pillar (added December 2021) treats
   energy/carbon/resource efficiency as a design driver alongside cost;
   Budget originally only asked about money and volumes.
+- **Attack Surface** (invariant #16, added 2026-08-16 — a separate pass
+  from the August 12 audit above) — the AWS Well-Architected Framework's
+  Security pillar splits Identity and Access Management and Data
+  Protection (already covered by Trust and Secrets) from two further
+  areas neither invariant reaches: Infrastructure Protection ("protected
+  against unintended and unauthorized access, and potential
+  vulnerabilities," naming WAFs and API gateways as policy-enforcement
+  points) and Application Security's dependency-management practice
+  (SEC11-BP05, "Centralize services for packages and dependencies").
+  Trust answers who is allowed to do what; neither it nor Secrets asks
+  what happens when something malicious — malformed input, a flood of
+  requests, a compromised dependency — hits the boundary regardless of
+  who it claims to be.
 
 **Confirmed already covered, not manufactured into findings:** DDD
 strategic design's bounded contexts map onto the Boundaries invariant and
@@ -113,7 +127,7 @@ to grow. `SKILL.md`'s own rule: a new invariant only gets added when a
 generative catch-all pass repeatedly surfaces the same missing question,
 or a *deliberate, cited* gap analysis against a named framework
 identifies a specific gap and its architectural consequence. Invariants
-#14 and #15 were added this second way.
+#14, #15, and #16 were added this second way.
 
 The three vendored methods iluvatar's Phase 1 runs on are a separate,
 narrower kind of grounding, not written for this project: Phase 1's
@@ -166,3 +180,10 @@ Fetched and cited August 12, 2026:
 - https://docs.structurizr.com/dsl
 - https://visuresolutions.com/ai-engineering/ai-requirements-elicitation
 - https://copilot4devops.com/elicit/
+
+Fetched and cited August 16, 2026, for the Attack Surface addition
+(invariant #16):
+
+- https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/security.html
+- https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/infrastructure-protection.html
+- https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/application-security.html

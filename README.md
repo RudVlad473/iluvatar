@@ -18,7 +18,7 @@ anyone's asked what happens when two writes race, or what the app does
 when the network is down.
 
 iluvatar is a Claude Code skill that forces the boring questions first.
-Give it a one-sentence app idea and it runs a 15-point classification
+Give it a one-sentence app idea and it runs a 16-point classification
 pass (state, failure, concurrency, compliance, the stuff that gets
 skipped) and emits `HIGH-LEVEL-ARCHITECTURE.md`: a frozen,
 schema-validated contract that names archetypes and cross-cutting
@@ -284,11 +284,12 @@ and emits a stable, schema-validated, downstream-parseable classification
 this way. Re-verify before leaning on this claim long after that date.
 Full reasoning, sources, and caveats: [`COMPARISON.md`](COMPARISON.md).
 
-The 15-invariant checklist itself isn't invented from vibes, either: it
+The 16-invariant checklist itself isn't invented from vibes, either: it
 started as a domain-agnostic synthesis, then got audited clause-by-clause
 against five named frameworks (ISO/IEC 25010:2023, arc42, the AWS
 Well-Architected Framework, DDD strategic design, the Google SRE
-production-readiness taxonomy), closing three real gaps the audit found.
+production-readiness taxonomy), closing four real gaps across two audit
+passes.
 Details and citations: [`COMPARISON.md`](COMPARISON.md#grounded-in-named-standards-not-invented).
 
 Phase 1's requirements scoping and capacity estimation (the `botec.py`
@@ -304,7 +305,7 @@ vendored from
   language) anywhere except a `Known Constraints` line the user imposed
   themselves. Classification, not selection.
 - **Never writes code.**
-- **Never skips a concern silently**: every one of its 15 invariants is
+- **Never skips a concern silently**: every one of its 16 invariants is
   marked relevant or deferred-with-a-reason; an unlisted concern is a
   decision some later tool would otherwise make alone.
 - **Gates on a validator, not just a read-through**: a script checks the
