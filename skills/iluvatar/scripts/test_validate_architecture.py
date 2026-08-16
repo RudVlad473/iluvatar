@@ -21,7 +21,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-import validate_architecture
+import validate_architecture  # pyright: ignore[reportImplicitRelativeImport]
 
 GOOD_DOC = """\
 ---
@@ -103,7 +103,7 @@ class CheckSectionsTests(unittest.TestCase):
         self.assertTrue(any("Provenance" in problem for problem in problems))
 
     def test_sections_out_of_order_are_reported(self):
-        headings = list(validate_architecture.REQUIRED_SECTIONS)
+        headings: list[str] = list(validate_architecture.REQUIRED_SECTIONS)
         headings[0], headings[1] = headings[1], headings[0]
         problems = validate_architecture.check_sections(headings)
         self.assertTrue(any("out of order" in problem for problem in problems))
